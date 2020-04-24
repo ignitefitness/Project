@@ -1,0 +1,85 @@
+:root{
+  --main-color: darkorange;
+  --main-color-border: black;
+  --main-color-font: white;
+  --main-color-selected: #89C040;
+
+  --backgound-color-font: black;
+  --backgound-color: white;
+  --backgound-color-selected: #f1f1f1;
+
+  --transition-time: 0.3s;
+}
+body {
+  background-color: var(--backgound-color);
+  color: var(--backgound-color-font);
+}
+h1::before,h1::after{
+    display: inline-block;
+    background-image: url("Images/ignitelogo.jpeg");
+    background-repeat: no-repeat;   
+    background-size: 100%;
+    width: 10vw;
+    padding: 2.5vw;
+    content: "\00a0";
+}
+h1::before{   
+    background-position: center right;
+}
+
+h1::after{
+    background-position: center left;
+}
+
+nav.dropdown:hover,nav.dropdown{
+  transition-property: background-color;
+  transition-duration: var(--transition-time);
+}
+nav.dropdown {
+  background-color: var(--main-color);
+  color: var(--main-color-font);
+}
+nav.dropdown:hover {
+  background-color: var(--main-color-selected);
+}
+
+nav.dropdown:hover::after,nav::after{
+  content: "▼";
+  display: inline-block;
+  transition-property: transform;
+  transition-duration: var(--transition-time);
+}
+nav.dropdown:hover::after{
+  transform: rotate(0deg);
+}
+nav.dropdown::after{
+  transform: rotate(90deg);
+}
+
+nav.dropdown .dropdown-content {
+  box-shadow: 0 0.5em 1em 0 rgba(0,0,0,0.2);
+}
+
+nav.dropdown .dropdown-content a {
+  background-color: var(--backgound-color);
+  color: var(--backgound-color-font);
+  text-decoration: none;
+}
+
+nav.dropdown .dropdown-content a:hover {
+  background-color: var(--backgound-color-selected);
+}
+
+.container a{
+  color: var(--main-color);
+  text-shadow: -1px 0 var(--main-color-border), 0 1px var(--main-color-border), 1px 0 var(--main-color-border), 0 -1px var(--main-color-border);
+
+  filter: brightness(100%);
+  transition-property: filter;
+  transition-duration: var(--transition-time);
+}
+.container a:hover{
+  filter: brightness(130%);
+  transition-property: filter;
+  transition-duration: var(--transition-time);
+}
